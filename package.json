@@ -1,5 +1,5 @@
 {
-  "name": "@ashleynexvelsolutions/streak-counter",
+  "name": "@nexvelso/streak-counter",
   "version": "0.0.1",
   "devDependencies": {
     "@types/jest": "^27.4.1",
