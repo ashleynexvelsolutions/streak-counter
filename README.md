@@ -13,7 +13,7 @@ npm install @ashleynexvelsolutions/streak-counter
 ```
  
 ### Usage
- 
+ [![Edit streak-counter (egghead) (forked)](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/streak-counter-egghead-forked-9i1b46?fontsize=14&hidenavigation=1&theme=dark)
 ```typescript
 import { streakCounter } from "@ashleynexvelsolutions/streak-counter";
  
