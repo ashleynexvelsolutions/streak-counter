@@ -28,13 +28,6 @@ describe("streakCounter", () => {
         const date = new Date();
         const streak = streakCounter(mockLocalStorage, date);
       
-        function formattedDate(date: Date): string {
-          // returns date as 11/11/2021
-          // other times it returns 11/11/2021, 12:00:00 AM
-          // which is why we call the .split at the end
-          return date.toLocaleDateString("en-US");
-        }
-      
         const dateFormatted = formattedDate(date);
       
         expect(streak.currentCount).toBe(1);
@@ -56,10 +49,12 @@ describe("streakCounter", () => {
           const mockJSDom = new JSDOM("", { url: "https://localhost" });
       
           mockLocalStorage = mockJSDom.window.localStorage;
+          
       
           // Use date in past so it’s always the same
-          const date = new Date("2021-12-12");
-      
+          const date = new Date("12/12/21");
+      console.log(`date: `+date)
+
           const streak = {
             currentCount: 1,
             startDate: formattedDate(date),
@@ -67,12 +62,14 @@ describe("streakCounter", () => {
           };
       
           mockLocalStorage.setItem("streak", JSON.stringify(streak));
+          console.log(`mockLocalStorage2: `+ JSON.stringify(mockLocalStorage))
         });
         afterEach(() => {
           mockLocalStorage.clear();
         });
         it("should return the streak from localStorage", () => {
           const date = new Date();
+         
           const streak = streakCounter(mockLocalStorage, date);
       
           // Should match the dates used to set up the tests
@@ -80,4 +77,3 @@ describe("streakCounter", () => {
         });
       });
    });
-   
